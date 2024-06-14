@@ -177,6 +177,7 @@ export class AuthRequest implements Omit<AuthRequestConfig, 'state'> {
 
     let result: WebBrowser.WebBrowserAuthSessionResult;
     try {
+      await WebBrowser.openAuthSessionAsync("https://carrently2.auth.us-east-1.amazoncognito.com/logout?client_id=17rjuplgrquppm0k1icdnmc6l0&logout_uri=exp://192.168.31.215:8081/&response_type=code&redirect_uri=exp://192.168.31.215:8081/");
       result = await WebBrowser.openAuthSessionAsync(startUrl, returnUrl, options);
     } finally {
       _authLock = false;
